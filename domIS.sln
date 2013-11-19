@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domIS", "domIS\domIS.csproj", "{A5BBDF3B-254D-4A9A-90A7-1E6DE2F87511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{946AC8E5-A928-4365-80C9-A7D6625A336A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5BBDF3B-254D-4A9A-90A7-1E6DE2F87511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BBDF3B-254D-4A9A-90A7-1E6DE2F87511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BBDF3B-254D-4A9A-90A7-1E6DE2F87511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BBDF3B-254D-4A9A-90A7-1E6DE2F87511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946AC8E5-A928-4365-80C9-A7D6625A336A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946AC8E5-A928-4365-80C9-A7D6625A336A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946AC8E5-A928-4365-80C9-A7D6625A336A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946AC8E5-A928-4365-80C9-A7D6625A336A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
