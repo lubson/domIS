@@ -1,13 +1,6 @@
 ﻿using DataLayer;
 using Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -18,6 +11,7 @@ namespace domIS
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,10 +19,11 @@ namespace domIS
             var ucastnik = new Ucastnik { 
                 Jmeno = "Lubomír",
                 Prijmeni = "Hruban",
-                Narozen = DateTime.Now
+                Narozen = DateTime.Now,
+                Created = DateTime.Now
             };
 
-            var db = new DevelopContext();
+            var db = new TestContext();
             db.Ucastnici.Add(ucastnik);
             db.SaveChanges();
         }

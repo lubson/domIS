@@ -8,8 +8,10 @@ using Model;
 
 namespace DataLayer
 {
-    public class DevelopContext : DbContext
+    public class TestContext : DbContext
     {
         public DbSet<Ucastnik> Ucastnici { get; set; }
+
+        public TestContext() : base() {}
     }
 }
