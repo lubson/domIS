@@ -1,4 +1,3 @@
-C:\Users\lubson\Documents\GitHub\domIS\DataLayer\bin\Debug\DataLayer.dll.config
 C:\Users\lubson\Documents\GitHub\domIS\DataLayer\bin\Debug\DataLayer.dll
 C:\Users\lubson\Documents\GitHub\domIS\DataLayer\bin\Debug\DataLayer.pdb
 C:\Users\lubson\Documents\GitHub\domIS\DataLayer\bin\Debug\EntityFramework.dll
