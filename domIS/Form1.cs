@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataLayer;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace domIS
 {
     public partial class Form1 : Form
@@ -15,6 +18,19 @@ namespace domIS
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var ucastnik = new Ucastnik { 
+                Jmeno = "Lubomír",
+                Prijmeni = "Hruban",
+                Narozen = DateTime.Now
+            };
+
+            var db = new DevelopContext();
+            db.Ucastnici.Add(ucastnik);
+            db.SaveChanges();
         }
     }
 }
