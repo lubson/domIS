@@ -3,4 +3,5 @@
 *.pdb
 *.cache
 /.nuget
-/Debug
+Debug/
+Release/
