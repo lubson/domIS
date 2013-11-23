@@ -1,4 +1,0 @@
-C:\Users\lubson\Documents\GitHub\domIS\Model\bin\Debug\Model.dll
-C:\Users\lubson\Documents\GitHub\domIS\Model\bin\Debug\Model.pdb
-C:\Users\lubson\Documents\GitHub\domIS\Model\obj\Debug\Model.dll
-C:\Users\lubson\Documents\GitHub\domIS\Model\obj\Debug\Model.pdb
