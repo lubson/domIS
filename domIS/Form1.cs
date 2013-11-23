@@ -23,7 +23,7 @@ namespace domIS
                 Created = DateTime.Now
             };
 
-            var db = new TestContext();
+            var db = new Context();
             db.Ucastnici.Add(ucastnik);
             db.SaveChanges();
         }

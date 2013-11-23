@@ -17,7 +17,7 @@ namespace domIS
         [STAThread]
         public static void Main()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<TestContext>());
+            Database.SetInitializer<Context>(new DropCreateDatabaseAlways<Context>());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
