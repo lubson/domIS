@@ -27,6 +27,7 @@ namespace DataLayer
         public void InsertOrUpdate(Ucastnik ucastnik) {
             if (ucastnik.Id == default(int))
             {
+                ucastnik.Created = DateTime.Now;
                 Ucastnici.Add(ucastnik);
             }
             else {

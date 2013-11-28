@@ -12,15 +12,13 @@ namespace domIS
         public Run()
         {
             InitializeComponent();
-            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void newUcastnik(object sender, EventArgs e)
         {
-
             var ucastnikForm = new UcastnikForm(new Ucastnik());
+            ucastnikForm.Text = "Nový účastník";
             ucastnikForm.Show();
-            
         }
     }
 }

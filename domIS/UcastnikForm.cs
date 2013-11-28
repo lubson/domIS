@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DataLayer;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,18 +14,32 @@ namespace domIS
 {
     public partial class UcastnikForm : Form
     {
+        public Ucastnik Ucastnik { get; set; }
+
         public UcastnikForm(Ucastnik ucastnik)
         {
             InitializeComponent();
+            Ucastnik = ucastnik;
         }
 
         private void UcastnikForm_Load(object sender, EventArgs e)
         {
-
+            ucastnikBindingSource.DataSource = Ucastnik;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cancel(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void save(object sender, EventArgs e)
+        {
+            using (IUnitOfWork uow = new UnitOfWork(new Context()))
+            {
+                IUcastnikRepository ucastnikRepository = new UcastnikRepository(uow);
+                ucastnikRepository.InsertOrUpdate(Ucastnik);
+                uow.Commit();
+            }
             Close();
         }
     }
