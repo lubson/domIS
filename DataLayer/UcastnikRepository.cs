@@ -8,41 +8,40 @@ using System.Data.Entity;
 
 namespace DataLayer
 {
-    public class UcastnikRepository
+    public class UcastnikRepository : IUcastnikRepository
     {
-        private Context context;
-        private IDbSet<Ucastnik> ucastnici
+        private Context Context;
+        private IDbSet<Ucastnik> Ucastnici
         { 
             get
             {
-                return context.Ucastnici;
+                return Context.Ucastnici;
             }
         }
 
-
-        public UcastnikRepository(UnitOfWork unitOfWork)
+        public UcastnikRepository(IUnitOfWork unitOfWork)
         {
-            context = unitOfWork.Context;
+            Context = unitOfWork.Context();
         }
 
         public void InsertOrUpdate(Ucastnik ucastnik) {
             if (ucastnik.Id == default(int))
             {
-                ucastnici.Add(ucastnik);
+                Ucastnici.Add(ucastnik);
             }
             else {
-                context.Entry(ucastnik).State = EntityState.Modified;
+                Context.Entry(ucastnik).State = EntityState.Modified;
             }
         }
 
         public Ucastnik Find(int id)
         {
-            return ucastnici.Find(id);
+            return Ucastnici.Find(id);
         }
 
         public void Delete(Ucastnik ucastnik)
         {
-            ucastnici.Remove(ucastnik);
+            Ucastnici.Remove(ucastnik);
         }
     }
 }

@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly Context _context;
-
-        internal Context Context
-        {
-            get { return _context; }
-        }
-
+               
         public UnitOfWork()
         {
             _context = new Context();
@@ -22,7 +17,12 @@ namespace DataLayer
 
         public UnitOfWork(Context context)
         {
-            _context = new Context();
+            _context = context;
+        }
+
+        public Context Context()
+        {
+            return _context;
         }
 
         public int Commit()
