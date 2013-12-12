@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using DataLayer;
+
 
 namespace domIS
 {
@@ -17,6 +18,7 @@ namespace domIS
         [STAThread]
         public static void Main()
         {
+
             Database.SetInitializer<Context>(new DropCreateDatabaseAlways<Context>());
 
             Application.EnableVisualStyles();
@@ -25,3 +27,4 @@ namespace domIS
         }
     }
 }
+

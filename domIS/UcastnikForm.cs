@@ -20,11 +20,14 @@ namespace domIS
         {
             InitializeComponent();
             Ucastnik = ucastnik;
+
         }
 
         private void UcastnikForm_Load(object sender, EventArgs e)
         {
             ucastnikBindingSource.DataSource = Ucastnik;
+            dateTimePicker1.Value = new DateTime(1989, 3, 21);
+            comboBox1.SelectedValue = EPohlavi.Neuvedeno;
         }
 
         private void cancel(object sender, EventArgs e)
@@ -42,5 +45,8 @@ namespace domIS
             }
             Close();
         }
+
+
+
     }
 }

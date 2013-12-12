@@ -9,17 +9,13 @@ namespace Model
         public string Prijmeni { get; set; }
         public DateTime Narozen { get; set; }
         public DateTime Created { get; set; }
+        public EPohlavi Pohlavi { get; set; }
         public int Vek
         {
             get
             { 
                 return (DateTime.Now - Narozen).Days;            
             }
-        }
-
-        public Ucastnik()
-        {
-            Narozen = DateTime.Now;
         }
 
         public override string ToString()

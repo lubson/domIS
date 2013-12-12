@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Clutch">
+      <HintPath>..\packages\Clutch.1.0.5047.39101\lib\net40\Clutch.dll</HintPath>
+    </Reference>
+    <Reference Include="Clutch.Diagnostics.EntityFramework">
+      <HintPath>..\packages\Clutch.Diagnostics.EntityFramework.1.0.5047.39115\lib\net40\Clutch.Diagnostics.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -115,6 +121,7 @@
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
