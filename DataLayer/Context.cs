@@ -10,17 +10,13 @@ namespace DataLayer
 {
     public class Context : DbContext
     {
+        public Context() : base("name=db") { }
+        
         public DbSet<Ucastnik> Ucastnici { get; set; }
-
-        public Context() : base("name=db") {}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            /*Ucastnik*/
-            modelBuilder.Entity<Ucastnik>().ToTable("Ucastnik");
-            modelBuilder.Entity<Ucastnik>().Property(u => u.Prijmeni)
-                .HasMaxLength(35)
-                .IsRequired();
+            modelBuilder.Configurations.Add(new UcastnikConfig());
             
             base.OnModelCreating(modelBuilder);
         }
