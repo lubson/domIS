@@ -27,7 +27,7 @@ namespace domIS
         {
             ucastnikBindingSource.DataSource = Ucastnik;
             dateTimePicker1.Value = new DateTime(1989, 3, 21);
-            comboBox1.SelectedValue = EPohlavi.Neuvedeno;
+            
         }
 
         private void cancel(object sender, EventArgs e)
@@ -37,16 +37,11 @@ namespace domIS
 
         private void save(object sender, EventArgs e)
         {
-            using (IUnitOfWork uow = new UnitOfWork(new Context()))
-            {
-                IUcastnikRepository ucastnikRepository = new UcastnikRepository(uow);
-                ucastnikRepository.InsertOrUpdate(Ucastnik);
-                uow.Commit();
-            }
+            Ucastnik.Created = new DateTime(2001, 11, 21);
+            IUnitOfWork uow = new UnitOfWork();
+            uow.Ucastnici.Add(Ucastnik);
+            uow.Commit();
             Close();
         }
-
-
-
     }
 }

@@ -8,9 +8,9 @@ using Model;
 
 namespace DataLayer
 {
-    public class Context : DbContext
+    public class AppContext : DbContext
     {
-        public Context() : base("name=db") { }
+        public AppContext() : base("name=db") { }
         
         public DbSet<Ucastnik> Ucastnici { get; set; }
 

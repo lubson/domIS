@@ -8,41 +8,13 @@ using System.Data.Entity;
 
 namespace DataLayer
 {
-    public class UcastnikRepository : IUcastnikRepository
+    public class UcastnikRepository : Repository<Ucastnik>, IUcastnikRepository
     {
-        private Context Context;
-        private IDbSet<Ucastnik> Ucastnici
-        { 
-            get
-            {
-                return Context.Ucastnici;
-            }
-        }
-
-        public UcastnikRepository(IUnitOfWork unitOfWork)
+        public UcastnikRepository(DbContext context) : base(context) { }
+        
+        public IQueryable<Ucastnik> GetUcastnikByFullName(string Jmeno)
         {
-            Context = unitOfWork.Context();
-        }
-
-        public void InsertOrUpdate(Ucastnik ucastnik) {
-            if (ucastnik.Id == default(int))
-            {
-                ucastnik.Created = DateTime.Now;
-                Ucastnici.Add(ucastnik);
-            }
-            else {
-                Context.Entry(ucastnik).State = EntityState.Modified;
-            }
-        }
-
-        public Ucastnik Find(int id)
-        {
-            return Ucastnici.Find(id);
-        }
-
-        public void Delete(Ucastnik ucastnik)
-        {
-            Ucastnici.Remove(ucastnik);
+            throw new NotImplementedException();
         }
     }
 }

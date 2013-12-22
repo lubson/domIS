@@ -35,15 +35,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ucastnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.ucastnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ucastnikBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +106,10 @@
             this.textBox1.Size = new System.Drawing.Size(137, 22);
             this.textBox1.TabIndex = 5;
             // 
+            // ucastnikBindingSource
+            // 
+            this.ucastnikBindingSource.DataSource = typeof(Model.Ucastnik);
+            // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ucastnikBindingSource, "Prijmeni", true));
@@ -129,24 +131,12 @@
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.Value = new System.DateTime(2013, 11, 28, 14, 8, 25, 0);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(15, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Pohlaví";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -156,20 +146,6 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Základní údaje";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ucastnikBindingSource, "Pohlavi", true));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 106);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 24);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // ucastnikBindingSource
-            // 
-            this.ucastnikBindingSource.DataSource = typeof(Model.Ucastnik);
             // 
             // ucastnikBindingSource1
             // 
@@ -186,9 +162,9 @@
             this.Name = "UcastnikForm";
             this.Text = "UcastnikForm";
             this.Load += new System.EventHandler(this.UcastnikForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -206,8 +182,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.BindingSource ucastnikBindingSource;
         private System.Windows.Forms.BindingSource ucastnikBindingSource1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

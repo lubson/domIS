@@ -6,33 +6,71 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private readonly Context _context;
-               
+        private AppContext Context { get; set; }
+        private IUcastnikRepository _ucastnici;
+
         public UnitOfWork()
         {
-            _context = new Context();
+            CreateContext();
         }
 
-        public UnitOfWork(Context context)
+        public IUcastnikRepository Ucastnici 
         {
-            _context = context;
+            get
+            {
+                if (_ucastnici == null)
+                {
+                    _ucastnici = new UcastnikRepository(Context);
+ 
+                }
+ 
+                return _ucastnici; 
+            }
         }
 
-        public Context Context()
+        protected void CreateContext()
         {
-            return _context;
-        }
+            Context = new AppContext();
 
-        public int Commit()
-        {
-            return _context.SaveChanges();
+            // Do NOT enable proxied entities, else serialization fails.
+            //if false it will not get the associated certification and skills when we
+            //get the applicants
+            //Context.Configuration.ProxyCreationEnabled = false;
+
+            // Load navigation properties explicitly (avoid serialization trouble)
+            //Context.Configuration.LazyLoadingEnabled = false;
+
+            // Because Web API will perform validation, we don't need/want EF to do so
+            //DbContext.Configuration.ValidateOnSaveEnabled = false;
+
+            //DbContext.Configuration.AutoDetectChangesEnabled = false;
+            // We won't use this performance tweak because we don't need 
+            // the extra performance and, when autodetect is false,
+            // we'd have to be careful. We're not being that careful.
+        }        
+ 
+        public void Commit()
+        {             
+            Context.SaveChanges();
         }
 
         public void Dispose()
         {
-            _context.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (Context != null)
+                {
+                    Context.Dispose();
+                }
+            }
         }
     }
 }

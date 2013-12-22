@@ -1,9 +1,11 @@
 ﻿using System;
 namespace DataLayer
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
-        Context Context();
-        int Commit();
+        void Commit();
+
+        // Repositories
+        IUcastnikRepository Ucastnici { get; }
     }
 }

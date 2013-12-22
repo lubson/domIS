@@ -19,7 +19,7 @@ namespace domIS
         public static void Main()
         {
 
-            Database.SetInitializer<Context>(new DropCreateDatabaseAlways<Context>());
+            Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

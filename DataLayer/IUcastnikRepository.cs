@@ -1,12 +1,11 @@
 ﻿using System;
 using Model;
+using System.Linq;
 
 namespace DataLayer
 {
-    public interface IUcastnikRepository
+    public interface IUcastnikRepository : IRepository<Ucastnik>
     {
-        void InsertOrUpdate(Ucastnik ucastnik);
-        Ucastnik Find(int id);
-        void Delete(Ucastnik ucastnik);
+        IQueryable<Ucastnik> GetUcastnikByFullName(string Jmeno);
     }
 }
