@@ -18,8 +18,8 @@ namespace domIS
         [STAThread]
         public static void Main()
         {
-
-            Database.SetInitializer<AppContext>(new DropCreateDatabaseAlways<AppContext>());
+            //TODO If generating through migrations works, remove this:
+            //Database.SetInitializer<Context>(new DropCreateDatabaseAlways<Context>());
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

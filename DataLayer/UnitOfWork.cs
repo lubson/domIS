@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private AppContext Context { get; set; }
+        private Context Context { get; set; }
         private IUcastnikRepository _ucastnici;
 
         public UnitOfWork()
@@ -32,7 +32,7 @@ namespace DataLayer
 
         protected void CreateContext()
         {
-            Context = new AppContext();
+            Context = new Context();
 
             // Do NOT enable proxied entities, else serialization fails.
             //if false it will not get the associated certification and skills when we

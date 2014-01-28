@@ -37,7 +37,6 @@ namespace domIS
 
         private void save(object sender, EventArgs e)
         {
-            Ucastnik.Created = new DateTime(2001, 11, 21);
             IUnitOfWork uow = new UnitOfWork();
             uow.Ucastnici.Add(Ucastnik);
             uow.Commit();
