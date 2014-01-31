@@ -10,7 +10,6 @@ namespace DataLayer.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "DataLayer.Context";
         }
 
         protected override void Seed(DataLayer.Context context)

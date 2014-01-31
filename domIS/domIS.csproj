@@ -95,6 +95,7 @@
       <DependentUpon>UcastnikForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Model.CNarodnost.datasource" />
     <None Include="Properties\DataSources\Model.Ucastnik.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

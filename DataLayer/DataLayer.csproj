@@ -48,13 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CNarodnostConfig.cs" />
+    <Compile Include="CNarodnostiRepository.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUcastnikRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Migrations\201401272235147_InitialCreate.cs" />
-    <Compile Include="Migrations\201401272235147_InitialCreate.Designer.cs">
-      <DependentUpon>201401272235147_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201401310954119_Initial.cs" />
+    <Compile Include="Migrations\201401310954119_Initial.Designer.cs">
+      <DependentUpon>201401310954119_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +75,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201401272235147_InitialCreate.resx">
-      <DependentUpon>201401272235147_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201401310954119_Initial.resx">
+      <DependentUpon>201401310954119_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

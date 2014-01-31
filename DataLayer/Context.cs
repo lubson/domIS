@@ -18,6 +18,9 @@ namespace DataLayer
         {
             modelBuilder.Configurations.Add(new UcastnikConfig());
             
+            //Ciselniky
+            modelBuilder.Configurations.Add(new CNarodnostConfig());
+            
             base.OnModelCreating(modelBuilder);
         }
     }

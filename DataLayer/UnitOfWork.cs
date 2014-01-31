@@ -10,23 +10,36 @@ namespace DataLayer
     {
         private Context Context { get; set; }
         private IUcastnikRepository _ucastnici;
+        private CNarodnostRepository _cNarodnosti;
 
         public UnitOfWork()
         {
             CreateContext();
         }
 
-        public IUcastnikRepository Ucastnici 
+        public IUcastnikRepository Ucastnici
         {
             get
             {
                 if (_ucastnici == null)
                 {
                     _ucastnici = new UcastnikRepository(Context);
- 
                 }
- 
-                return _ucastnici; 
+
+                return _ucastnici;
+            }
+        }
+
+        public CNarodnostRepository CNarodnosti
+        {
+            get
+            {
+                if (_cNarodnosti == null)
+                {
+                    _cNarodnosti = new CNarodnostRepository(Context);
+                }
+
+                return _cNarodnosti;
             }
         }
 

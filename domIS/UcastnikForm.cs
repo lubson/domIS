@@ -15,17 +15,29 @@ namespace domIS
     public partial class UcastnikForm : Form
     {
         public Ucastnik Ucastnik { get; set; }
+        public IList<CNarodnost> CNarodnosti { get; set; }
+        public IUnitOfWork UOW {get; set; }
+        
 
         public UcastnikForm(Ucastnik ucastnik)
         {
             InitializeComponent();
-            Ucastnik = ucastnik;
 
+            UOW = new UnitOfWork();
+            
+            Ucastnik = ucastnik;
+            CNarodnosti = UOW.CNarodnosti.GetAll().ToList();
         }
 
         private void UcastnikForm_Load(object sender, EventArgs e)
         {
             ucastnikBindingSource.DataSource = Ucastnik;
+
+            //comb
+            
+            comboBox1.DataSource = CNarodnosti;
+            comboBox1.DisplayMember = "ComboName";
+
             dateTimePicker1.Value = new DateTime(1989, 3, 21);
             
         }
@@ -37,10 +49,10 @@ namespace domIS
 
         private void save(object sender, EventArgs e)
         {
-            IUnitOfWork uow = new UnitOfWork();
-            uow.Ucastnici.Add(Ucastnik);
-            uow.Commit();
+            UOW.Ucastnici.Add(Ucastnik);
+            UOW.Commit();
             Close();
         }
+
     }
 }

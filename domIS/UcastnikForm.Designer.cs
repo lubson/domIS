@@ -39,10 +39,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucastnikBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cNarodnostBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cNarodnostBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -103,7 +107,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox1.Location = new System.Drawing.Point(119, 22);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 22);
+            this.textBox1.Size = new System.Drawing.Size(195, 22);
             this.textBox1.TabIndex = 5;
             // 
             // ucastnikBindingSource
@@ -116,7 +120,7 @@
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox2.Location = new System.Drawing.Point(119, 50);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 22);
+            this.textBox2.Size = new System.Drawing.Size(195, 22);
             this.textBox2.TabIndex = 6;
             // 
             // dateTimePicker1
@@ -127,12 +131,16 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker1.Location = new System.Drawing.Point(119, 78);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 22);
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.Value = new System.DateTime(2013, 11, 28, 14, 8, 25, 0);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -142,14 +150,55 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 140);
+            this.groupBox1.Size = new System.Drawing.Size(320, 196);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Základní údaje";
             // 
-            // ucastnikBindingSource1
+            // comboBox1
             // 
-            this.ucastnikBindingSource1.DataSource = typeof(Model.Ucastnik);
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.ucastnikBindingSource, "Narodnost", true));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(119, 135);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 23);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(15, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Pohlaví";
+            // 
+            // cNarodnostBindingSource
+            // 
+            this.cNarodnostBindingSource.DataSource = typeof(Model.CNarodnost);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(15, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 16);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Národnost";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(119, 106);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(195, 23);
+            this.comboBox2.TabIndex = 15;
             // 
             // UcastnikForm
             // 
@@ -165,7 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucastnikBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cNarodnostBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,7 +230,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.BindingSource ucastnikBindingSource;
-        private System.Windows.Forms.BindingSource ucastnikBindingSource1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource cNarodnostBindingSource;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -7,5 +7,6 @@ namespace DataLayer
 
         // Repositories
         IUcastnikRepository Ucastnici { get; }
+        CNarodnostRepository CNarodnosti { get; }
     }
 }

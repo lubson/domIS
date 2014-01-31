@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ciselnik.cs" />
+    <Compile Include="CNarodnost.cs" />
     <Compile Include="EPohlavi.cs" />
     <Compile Include="Ucastnik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
