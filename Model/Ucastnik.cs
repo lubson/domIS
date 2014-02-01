@@ -18,7 +18,7 @@ namespace Model
 
         public Ucastnik()
         {
-            Pohlavi = EPohlavi.Neznamo;
+            Pohlavi = EPohlavi.Neuvedeno;
         }
         
         public int Vek

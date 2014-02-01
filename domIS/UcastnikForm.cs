@@ -38,6 +38,8 @@ namespace domIS
             comboBox1.DataSource = CNarodnosti;
             comboBox1.DisplayMember = "ComboName";
 
+            
+
             dateTimePicker1.Value = new DateTime(1989, 3, 21);
             
         }
@@ -49,10 +51,14 @@ namespace domIS
 
         private void save(object sender, EventArgs e)
         {
+            RadioButton checkedRadioButton = panel1.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
+            Ucastnik.Pohlavi = (EPohlavi)Convert.ToInt32(checkedRadioButton.Tag);
+            
             UOW.Ucastnici.Add(Ucastnik);
             UOW.Commit();
             Close();
         }
+
 
     }
 }
